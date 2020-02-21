@@ -7,10 +7,29 @@
              x:Class="XamaMovies.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <StackLayout Margin="20,35,20,20">
+            <ListView ItemsSource="{Binding Movies}" ItemTapped="OnListViewItemTapped"
+                      RowHeight="110">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image 
+                                Source="{Binding Poster}"
+                                HeightRequest="80"/>
+                                <Label 
+                                Text="{Binding Title}"
+                                FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"
+                                    Margin="20"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
+

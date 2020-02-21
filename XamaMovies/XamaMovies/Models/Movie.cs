@@ -20,5 +20,10 @@ namespace XamaMovies.Models
         public string ImdbRating { get; set; }
         public string ImdbVotes { get; set; }
         public string Response { get; set; }
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }
